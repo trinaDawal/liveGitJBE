@@ -1,4 +1,4 @@
-package dem.exceptions;
+package ex.exceptions;
 
 public class MultipleExceptionsSingleTry {
 	public static void main(String[] args) {

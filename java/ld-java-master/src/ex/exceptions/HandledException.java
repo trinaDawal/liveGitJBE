@@ -1,4 +1,4 @@
-package dem.exceptions;
+package ex.exceptions;
 
 public class HandledException {
 public static void main(String[] args) {
