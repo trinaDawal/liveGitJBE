@@ -26,5 +26,5 @@ public class UserDefinedException{
 }
 //create an exception by extending the RuntimeException class
 class AgeInvalidException extends RuntimeException{
-
+// here after understanding inheritance.
 }
