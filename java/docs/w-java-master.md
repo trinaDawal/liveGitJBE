@@ -18,3 +18,13 @@
 
 :writing_hand: **_connect arrays with exceptions_**  
 
+:thumbsdown: **Bad Practices**  
+```java
+ catch (NullPointerException abcef)
+ Calculator1 xyz = null;
+```
+:thumbsup: **Best Practices**  
+```java
+ catch (NullPointerException nullPointerException)
+ Calculator1 casioCalculator = null;
+```
