@@ -28,3 +28,15 @@
  catch (NullPointerException nullPointerException)
  Calculator1 casioCalculator = null;
 ```
+
+:scroll: **Summary**  
+```java
+//package should be the first statement
+//AgeInvalidException belongs to the ex.exceptions;
+// folders ex/exceptions
+package ex.exceptions;
+
+public class AgeInvalidException extends RuntimeException{
+
+}
+```
