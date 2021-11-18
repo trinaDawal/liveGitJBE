@@ -20,8 +20,9 @@ public class Book {
 		author = pAuthor;
 		price = pPrice;
 	}	
-	
+//	OVERRIDDEN METHOD
 	public void displayBookDetails() {
+		System.out.println("DISPLAYING THE BOOK DETAILS");
 		System.out.println(title);
 		System.out.println(author);
 		System.out.println(price);
