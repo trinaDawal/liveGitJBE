@@ -37,6 +37,7 @@ public class ForLoop {
 			System.out.println("eat a cookie");
 			choice = new Scanner(System.in).nextLine();
 		} while(choice.equals("y"));
+
 		System.out.println("exiting program");
 	}
 
