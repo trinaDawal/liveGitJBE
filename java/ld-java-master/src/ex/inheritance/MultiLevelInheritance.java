@@ -1,6 +1,6 @@
 package ex.inheritance;
 
-public class SingleLevelInheritance {
+public class MultiLevelInheritance {
 
 }
 
