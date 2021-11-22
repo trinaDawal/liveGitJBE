@@ -1,3 +1,2 @@
 :link: [mysql-installer-community-8.0.27.1](https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-8.0.27.1.msi)  
-[mysql library](https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.27)
 :link: [mysql library](https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.27)
