@@ -12,15 +12,16 @@ public class Insert {
 			Connection mySQLConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JBEDB", "root",
 					"mysql");
 			System.out.println("CREATING STATEMENT");
-			Statement updateStatement = mySQLConnection.createStatement();
+			Statement insertStatement = mySQLConnection.createStatement();
 			System.out.println("EXECUTING QUERY AND OBTAINING NO OF ROWS AFFECTED");
 //			Executes the given SQL statement, which may be an INSERT, UPDATE, or DELETE statement
-			int rowCount = updateStatement.executeUpdate("UPDATE PRODUCTS SET PRODUCT_NAME = 'MSFM' WHERE PRODUCT_ID = 4");
+			int rowCount = insertStatement.executeUpdate("INSERT INTO PRODUCTS VALUES (4, 'LOY',780.50)");
+			rowCount = rowCount + insertStatement.executeUpdate("INSERT INTO PRODUCTS VALUES (5, 'HP',780.50)");
 			if(rowCount!=0) {
-				System.out.println("Updated : " + rowCount);
+				System.out.println("Inserted : " + rowCount);
 			}
 			else {
-				System.out.println("No rows updated!");
+				System.out.println("No Rows Inserted!");
 			}
 		} catch (SQLException sqlException) {
 			System.out.println("DATABASE CONNECTION ISSUE " + sqlException);		
