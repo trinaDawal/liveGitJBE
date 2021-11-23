@@ -24,8 +24,7 @@ public class Select {
 				System.out.println(productId + "  >  "+productName+"  >  "+price);
 			}
 		} catch (SQLException sqlException) {
-			System.out.println("DATABASE CONNECTION ISSUE " + sqlException);
-			
+			System.out.println("DATABASE CONNECTION ISSUE " + sqlException);		
 		}
 	}
 }
