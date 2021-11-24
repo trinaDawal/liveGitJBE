@@ -31,7 +31,7 @@ public class SelectServlet extends HttpServlet {
 		out.println("<title>Display Product Details</title>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("<h1>Product Details</h1>");
+		out.println("<h1>Product Details are printed on the Tomcat Server Console</h1>");
 		try {
 			Statement selectStatement = getStatement();
 //			Executes the given SQL statement, which may be an INSERT, UPDATE, or DELETE statement
