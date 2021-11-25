@@ -1,0 +1,23 @@
+:books: **PROJECT NAME : GBSDESKV1 (STS)**  
+:books: **PROJECT NAME : GBSWEBV1 (ECLIPSE)**  
+DBNAME : GBSDBV1
+PACKAGE : com.gbs
+MAIN APP : GBSApp
+
+CLASS  TABLE
+User USERS
+
+FIELD COLUMN
+userName USER_NAME
+password PASSWORD
+creationDate CREATION_DATE
+numberOfAccounts NUMBER_OF_ACCOUNTS
+totalBalance TOTAL_BALANCE
+contactNumber CONTACT_NUMBER
+
+:beginner: _**SOFTWARE**_  
+GIT
+GITHUB
+STS
+DRAW.IO
+VSCODE
