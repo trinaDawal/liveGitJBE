@@ -24,39 +24,39 @@
 			<th>Price</th>
 		</tr>
 		<%
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection mySQLConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JBEDB", "root",
-					"mysql");
-			Statement selectStatement = mySQLConnection.createStatement();
-			String queryString = "SELECT * FROM PRODUCTS";
-			ResultSet resultSet =  selectStatement.executeQuery(queryString);
-//			System.out.println("ITERATING THROUGH THE RESULT SET AND FETCHING THE ROWS");
-			boolean found = false;
-			
-			while(resultSet.next()) {
-				found = true;
-				int productId = resultSet.getInt("PRODUCT_ID");
-				String productName = resultSet.getString("PRODUCT_NAME");
-				float price = resultSet.getFloat("PRICE");
-				System.out.println(productId + "  >  "+productName+"  >  "+price);
-			%>
+			try {
+				Class.forName("com.mysql.jdbc.Driver");
+				Connection mySQLConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JBEDB", "root",
+						"mysql");
+				Statement selectStatement = mySQLConnection.createStatement();
+				String queryString = "SELECT * FROM PRODUCTS";
+				ResultSet resultSet = selectStatement.executeQuery(queryString);
+				//			System.out.println("ITERATING THROUGH THE RESULT SET AND FETCHING THE ROWS");
+				boolean found = false;
+
+				while (resultSet.next()) {
+					found = true;
+					int productId = resultSet.getInt("PRODUCT_ID");
+					String productName = resultSet.getString("PRODUCT_NAME");
+					float price = resultSet.getFloat("PRICE");
+					System.out.println(productId + "  >  " + productName + "  >  " + price);
+		%>
 		<tr>
-			<td><%= productId%></td>
-			<td><%= productName%></td>
-			<td><%= price%></td>
+			<td><%=productId%></td>
+			<td><%=productName%></td>
+			<td><%=price%></td>
 		</tr>
 		<%
 			}
-			if(!found) {
-				System.out.println("No products found....");
+				if (!found) {
+					System.out.println("No products found....");
+				}
+			} catch (SQLException sqlException) {
+				System.out.println("DATABASE CONNECTION ISSUE " + sqlException);
+			} catch (ClassNotFoundException classNotFoundException) {
+				System.out.println("UNABLE TO LOAD DRIVER" + classNotFoundException);
 			}
-		} catch (SQLException sqlException) {
-			System.out.println("DATABASE CONNECTION ISSUE " + sqlException);
-		} catch (ClassNotFoundException classNotFoundException) {
-			System.out.println("UNABLE TO LOAD DRIVER" + classNotFoundException);
-		}
-	%>
+		%>
 	</table>
 
 
