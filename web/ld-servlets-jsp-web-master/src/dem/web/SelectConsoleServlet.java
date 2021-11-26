@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 //localhost : tomcat on your machine
 //ld-servlets-jsp-web-master project called as webcontext
 //WelcomeServlet servlet mapping to url
-@WebServlet("/SelectServlet")
-public class SelectServlet extends HttpServlet {
+@WebServlet("/SelectConsoleServlet")
+public class SelectConsoleServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Inside the service method of SelectServlet");
@@ -29,13 +29,9 @@ public class SelectServlet extends HttpServlet {
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<title>Display Product Details</title>");
-		out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">\r\n" + 
-				"    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\r\n" + 
-				"    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js\"></script>\r\n" + 
-				"    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println(" <h1>Products List</h1>");
+		out.println("<h1>Product Details are printed on the Tomcat Server Console</h1>");
 		try {
 			Statement selectStatement = getStatement();
 //			Executes the given SQL statement, which may be an INSERT, UPDATE, or DELETE statement
@@ -45,24 +41,20 @@ public class SelectServlet extends HttpServlet {
 			ResultSet resultSet =  selectStatement.executeQuery(queryString);
 //			System.out.println("ITERATING THROUGH THE RESULT SET AND FETCHING THE ROWS");
 			boolean found = false;
-			out.println("<table class=\"table table-dark table-striped\" style = \"width:500px\"><tr><th>Product ID</th><th>Name</th><th>Price</th></tr>");
 			while(resultSet.next()) {
 				found = true;
 				int productId = resultSet.getInt("PRODUCT_ID");
 				String productName = resultSet.getString("PRODUCT_NAME");
 				float price = resultSet.getFloat("PRICE");
 				System.out.println(productId + "  >  "+productName+"  >  "+price);
-				out.println("<p>" + productId + "  >  "+productName+"  >  "+price +"</p>");
-				out.println("<tr><td>"+productId+ "</td><td>" + productName + "</td><td>" + price + "</td></tr>");
 			}
 			if(!found) {
 				System.out.println("No products found....");
 			}
-			out.println("");
 		} catch (SQLException sqlException) {
 			System.out.println("DATABASE CONNECTION ISSUE " + sqlException);
 		}	
-		out.println(" </table>");
+		
 		out.println("</body>");
 		out.println("</html>");		
 	}
