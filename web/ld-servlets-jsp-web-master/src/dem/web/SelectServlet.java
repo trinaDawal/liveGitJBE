@@ -60,8 +60,12 @@ public class SelectServlet extends HttpServlet {
 	}
 	public Statement getStatement() {
 		try {
+//			APPLICATION IS RUNNING. THE INSTANCE OF CLASSES IN A RUNNING APPLICATION.		
+// Class.forName("com.mysql.jdbc.Driver") returns object of com.mysql.jdbc.Driver.
+//			class (keyword), Class is class
 			Class.forName("com.mysql.jdbc.Driver");
 //			System.out.println("CONNECTING");
+//			Attempts to establish a connection to the given database URL.
 			Connection mySQLConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/JBEDB", "root",
 					"mysql");
 //			System.out.println("CREATING STATEMENT");

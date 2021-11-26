@@ -8,6 +8,7 @@ CLASS  TABLE
 User USERS
 
 FIELD COLUMN
+userId USER_ID
 userName USER_NAME
 password PASSWORD
 creationDate CREATION_DATE
