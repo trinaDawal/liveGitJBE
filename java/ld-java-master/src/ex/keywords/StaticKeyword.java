@@ -35,6 +35,7 @@ public class StaticKeyword {
 class Learner {
 //	BELONGS TO THE ALL LEARNERS (STATIC)
 //	static String trainining = "Java Back End Training";
+	static String Learner;
 	static String training;
 //	BELONGS TO EACH LEARNER (INSTANCE)
 	String traineeName;
