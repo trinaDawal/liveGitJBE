@@ -22,6 +22,11 @@ public class Select {
 				String productName = resultSet.getString("PRODUCT_NAME");
 				float price = resultSet.getFloat("PRICE");
 				System.out.println(productId + "  >  "+productName+"  >  "+price);
+				
+//				Product product = new Product();
+//				product.productId = productId;
+//				product.productName= productName;
+//				product.price = price;
 			}
 		} catch (SQLException sqlException) {
 			System.out.println("DATABASE CONNECTION ISSUE " + sqlException);		
