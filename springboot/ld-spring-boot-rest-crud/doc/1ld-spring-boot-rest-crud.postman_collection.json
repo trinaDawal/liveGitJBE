@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "1ebb8e40-9d38-4391-83fb-f30687733a60",
+		"name": "1ld-spring-boot-rest-crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/ecz/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"ecz",
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
