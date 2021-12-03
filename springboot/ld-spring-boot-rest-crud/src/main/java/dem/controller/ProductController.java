@@ -3,8 +3,11 @@ package dem.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -55,5 +58,25 @@ public class ProductController {
 		System.out.println("Inserting : " + productFromBrowser);
 		Product savedProduct = productRepository.save(productFromBrowser);
 		return savedProduct;
+	}
+//  UPDATE EXISTING PRODUCT
+	@PutMapping("/products/{id}")
+	public Product updateProduct(@PathVariable(value = "id") Long productId, @RequestBody Product productFromBrowser) {
+		System.out.println("Updating : " + productFromBrowser);
+//		fetch the product from the database with the id
+		Product existingProduct = productRepository.findById(productId).get();
+//		update the existing product with the details from the browser
+		existingProduct.setProductName(productFromBrowser.getProductName());
+		existingProduct.setPrice(productFromBrowser.getPrice());
+//		save the updated details
+		Product updatedProduct = productRepository.save(existingProduct);
+		return updatedProduct;
+	}
+	
+//	DELETE AN EXISTING PRODUCT
+	@DeleteMapping("/products/{productIdfromBrowser}")
+	public void deleteProduct(@PathVariable(value="productIdfromBrowser")Long productId) {
+		System.out.println("Deleting : " + productId);
+		productRepository.deleteById(productId);
 	}
 }
